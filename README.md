@@ -51,9 +51,10 @@ All of the following must be installed and available on the Delphi library path:
 > **Note:** KSVC is bundled with RAD Studio and is available via GetIt at no
 > additional cost. All other third-party libraries are open source.
 
-> **Note:** SVGIconImageList bundles the Ethea Markdown Help Viewer and HtmlViewer
-> components as source. No separate installation of those components is required —
-> they are compiled into the application from the SVGIconImageList source tree.
+> **Note:** SVGIconImageList bundles the Ethea Markdown Help Viewer, HtmlViewer,
+> Image32, and Clipper components as source. No separate installation of those
+> components is required — they are compiled into the application from the
+> SVGIconImageList source tree.
 
 ### Runtime
 
