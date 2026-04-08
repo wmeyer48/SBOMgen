@@ -44,9 +44,14 @@ All of the following must be installed and available on the Delphi library path:
 | [VirtualTreeView](https://github.com/Virtual-TreeView/Virtual-TreeView) | 8.3 | MPL 1.1 / LGPL | GitHub |
 | [SynEdit](https://getitnow.embarcadero.com/synedit-for-vcl/) | 2025.03 | MPL 1.1 | GetIt |
 | [Fundamentals5](https://github.com/fundamentalslib/fundamentals5) | 5.0 | BSD 2-Clause | GitHub |
+| [SVGIconImageList](https://github.com/EtheaDev/SVGIconImageList) | 2.4.0 | Apache 2.0 | GitHub |
 
 > **Note:** KSVC is bundled with RAD Studio and is available via GetIt at no
 > additional cost. All other third-party libraries are open source.
+
+> **Note:** SVGIconImageList bundles the Ethea Markdown Help Viewer and HtmlViewer
+> components as source. No separate installation of those components is required —
+> they are compiled into the application from the SVGIconImageList source tree.
 
 ### Runtime
 
