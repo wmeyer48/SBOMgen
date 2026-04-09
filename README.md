@@ -47,14 +47,14 @@ All of the following must be installed and available on the Delphi library path:
 | [SVGIconImageList](https://github.com/EtheaDev/SVGIconImageList) | 2.4.0 | Apache 2.0 | GitHub |
 | [Image32](http://www.angusj.com/delphi/image32/Docs/_Body.htm) | 4.4 | BSL-1.0 | Author's site |
 | [Clipper](http://www.angusj.com/delphi/clipper.php) | 2.3.7 | BSL-1.0 | Author's site |
+| [MarkdownHelpViewer](https://github.com/EtheaDev/MarkdownHelpViewer) | 2.4.0 | Apache 2.0 | GitHub |
 
 > **Note:** KSVC is bundled with RAD Studio and is available via GetIt at no
 > additional cost. All other third-party libraries are open source.
 
-> **Note:** SVGIconImageList bundles the Ethea Markdown Help Viewer, HtmlViewer,
-> Image32, and Clipper components as source. No separate installation of those
-> components is required — they are compiled into the application from the
-> SVGIconImageList source tree.
+> **Note:** MarkdownHelpViewer bundles the Ethea Markdown Help Viewer, HtmlViewer,
+> Image32, SVGImageIconList, and Clipper components as source. There is no conflict
+> with the separately installed SVGIconImageList, if that was installed by GetIt.
 
 ### Runtime
 
