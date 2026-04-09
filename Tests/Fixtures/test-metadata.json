@@ -1,0 +1,51 @@
+{
+    "schemaVersion": 1,
+    "packages": [
+        {
+            "name": "Spring4D",
+            "version": "2.0.1",
+            "supplier": "Stefan Glienke",
+            "supplierURL": "https://bitbucket.org/sglienke/spring4d/",
+            "license": "Apache-2.0",
+            "description": "Spring Framework for Delphi",
+            "type": "ctLibrary"
+        },
+        {
+            "name": "VirtualTrees",
+            "version": "8.3",
+            "supplier": "JAM Software",
+            "supplierURL": "https://github.com/Virtual-TreeView/Virtual-TreeView",
+            "license": "MPL-1.1 OR LGPL-2.1-only WITH Classpath-exception-2.0",
+            "description": "TreeView component",
+            "type": "ctLibrary",
+            "user-upd": "2026-01-15"
+        },
+        {
+            "name": "SVGIconImageList",
+            "version": "2.4.0",
+            "supplier": "Ethea",
+            "supplierURL": "https://github.com/EtheaDev/SVGIconImageList",
+            "license": "Apache-2.0",
+            "description": "SVG icon image list",
+            "type": "ctLibrary",
+            "units": [
+                "SVGIconImageList",
+                "SVGIconImage",
+                "MarkdownProcessor",
+                "HtmlView"
+            ]
+        },
+        {
+            "name": "Indy",
+            "version": "-luc-",
+            "supplier": "Embarcadero Technologies (bundled)",
+            "supplierURL": "https://www.indyproject.org",
+            "license": "MPL-1.1",
+            "description": "Internet Direct",
+            "type": "ctLibrary",
+            "prefixes": [
+                "Id"
+            ]
+        }
+    ]
+}

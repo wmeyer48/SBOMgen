@@ -1,0 +1,11 @@
+﻿{
+  "projectName": "SBOM Test",
+  "rootFolders": "C:\\BookPub\\SBOMgen",
+  "mapFile": "C:\\BookPub\\SBOMgen\\Win64\\Debug\\SBOMgen.map",
+  "dprFile": "C:\\BookPub\\SBOMgen\\SBOMgen.dpr",
+  "excludedPaths": "C:\\Obsolete",
+  "compilerVersion": "Delphi 12 Athens",
+  "lastGenerated": "2026-02-11T11:44:23.993Z",
+  "created": 0.0,
+  "lastModified": 46064.4891665857
+}
