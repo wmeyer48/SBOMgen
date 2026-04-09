@@ -54,7 +54,7 @@ All of the following must be installed and available on the Delphi library path:
 
 > **Note:** MarkdownHelpViewer bundles the Ethea Markdown Help Viewer, HtmlViewer,
 > Image32, SVGIconImageList, and Clipper components as source. There is no conflict
-> with the separately installed SVGIconImageList, if that was installed by GetIt.
+> with the separately installed SVGIconImageList, if that was installed via GetIt.
 
 ### Runtime
 
