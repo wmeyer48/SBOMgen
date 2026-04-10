@@ -45,8 +45,8 @@ All of the following must be installed and available on the Delphi library path:
 | [SynEdit](https://getitnow.embarcadero.com/synedit-for-vcl/) | 2025.03 | MPL 1.1 | GetIt |
 | [Fundamentals5](https://github.com/fundamentalslib/fundamentals5) | 5.0 | BSD 2-Clause | GitHub |
 | [SVGIconImageList](https://github.com/EtheaDev/SVGIconImageList) | 2.4.0 | Apache 2.0 | GitHub |
-| [Image32](http://www.angusj.com/delphi/image32/Docs/_Body.htm) | 4.4 | BSL-1.0 | Author's site |
-| [Clipper](http://www.angusj.com/delphi/clipper.php) | 2.3.7 | BSL-1.0 | Author's site |
+| [Image32](https://github.com/AngusJohnson/Image32) | 4.4 | BSL-1.0 | Author's site |
+| [Clipper](https://github.com/AngusJohnson/Clipper2) | 2.3.7 | BSL-1.0 | Author's site |
 | [MarkdownHelpViewer](https://github.com/EtheaDev/MarkdownHelpViewer) | 2.4.0 | Apache 2.0 | GitHub |
 
 > **Note:** KSVC is bundled with RAD Studio and is available via GetIt at no
