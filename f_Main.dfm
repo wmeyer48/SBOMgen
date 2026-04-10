@@ -59,7 +59,7 @@ object frmMain: TfrmMain
       Width = 1305
       Height = 593
       Hint = ''
-      ActivePage = tsUserProfile
+      ActivePage = tsApplicationCode
       Align = alClient
       BoldCurrentTab = True
       Font.Charset = DEFAULT_CHARSET
@@ -69,7 +69,7 @@ object frmMain: TfrmMain
       Font.Style = []
       ParentFont = False
       StyleName = 'Windows'
-      TabIndex = 0
+      TabIndex = 3
       TabOrder = 0
       TabStyle = tsRoundCorners
       FixedDimension = 21
@@ -299,6 +299,10 @@ object frmMain: TfrmMain
       object tsProjectAndCompiler: TRzTabSheet
         Color = 15461355
         Caption = 'Project and Compiler'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlProj: TRzPanel
           Left = 0
           Top = 0
@@ -757,6 +761,10 @@ object frmMain: TfrmMain
       object tsPackages: TRzTabSheet
         Color = 15461355
         Caption = 'Packages'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlPackages: TRzPanel
           Left = 0
           Top = 0
@@ -1044,18 +1052,27 @@ object frmMain: TfrmMain
           Align = alClient
           BorderOuter = fsNone
           TabOrder = 0
-          object pnlAppCodeViewer: TRzPanel
+          object Splitter1: TSplitter
             Left = 0
             Top = 289
             Width = 1301
-            Height = 276
+            Height = 3
+            Cursor = crVSplit
+            Align = alTop
+            ExplicitWidth = 276
+          end
+          object pnlAppCodeViewer: TRzPanel
+            Left = 0
+            Top = 292
+            Width = 1301
+            Height = 273
             Align = alClient
             TabOrder = 0
             object synSourceView: TSynEdit
               Left = 2
               Top = 2
               Width = 1297
-              Height = 272
+              Height = 269
               Align = alClient
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText

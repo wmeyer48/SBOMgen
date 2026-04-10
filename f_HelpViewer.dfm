@@ -31,16 +31,4 @@ object frmHelpViewer: TfrmHelpViewer
       OnClick = btnCloseClick
     end
   end
-  object MarkdownViewer: TMarkdownViewer
-    Left = 3
-    Top = 44
-    Width = 894
-    Height = 553
-    PrintMarginBottom = 2.000000000000000000
-    PrintMarginLeft = 2.000000000000000000
-    PrintMarginRight = 2.000000000000000000
-    PrintMarginTop = 2.000000000000000000
-    Align = alClient
-    TabOrder = 1
-  end
 end

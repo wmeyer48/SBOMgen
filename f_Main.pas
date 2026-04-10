@@ -5,6 +5,12 @@
   William Meyer   All rights reserved.
 *)
 
+(*
+  MARKDOWN_HELP must be defined as a project option to build with help support.
+  Project, Options, Delphi Compiler, Conditional Defines
+    All configurations, 32 or 64 bit. Add MARKDOWN_HELP
+*)
+
 interface
 
 uses
@@ -189,6 +195,7 @@ type
     tsSBOM:                 TRzTabSheet;
     tsUserProfile:          TRzTabSheet;
     vstAppCode:             TVirtualStringTree;
+    Splitter1: TSplitter;
     procedure btnClearProjectLogClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure btnDeleteProjectClick(Sender: TObject);
@@ -857,7 +864,8 @@ begin
         cmbProject.Text,
         FUserProfile.Company,
         Components as IReadOnlyList<ISBOMComponent>,
-        OutputFile);
+        OutputFile,
+        FContainer.Resolve<ISBOMGenerator>);
 
       // Mark generation timestamp on the project.
       if Assigned(FCurrentProject) then
@@ -1586,7 +1594,11 @@ begin
   else
     HelpSection := '#getting-started';
   end;
+{$IFDEF MARKDOWN_HELP}
   TfrmHelpViewer.ShowHelpTopic(FHelpFile);
+{$ELSE}
+  ShowMessage('Help is available in the Manual folder as a PDF.');
+{$ENDIF}
 end;
 
 function TfrmMain.ValidateDetectionSettings: Boolean;

@@ -9,6 +9,12 @@
   via the class method ShowHelpTopic and freed on close.
 *)
 
+(*
+  MARKDOWN_HELP must be defined as a project option to build with help support.
+  Project, Options, Delphi Compiler, Conditional Defines
+    All configurations, 32 or 64 bit. Add MARKDOWN_HELP
+*)
+
 interface
 
 uses
@@ -16,17 +22,23 @@ uses
   Vcl.Forms,
   Vcl.Controls,
   Vcl.StdCtrls,
-  Vcl.ExtCtrls,
-  HTMLUn2,
+  Vcl.ExtCtrls
+{$IFDEF MARKDOWN_HELP}
+  , HTMLUn2,
   HtmlView,
-  MarkDownViewerComponents;
+  MarkDownViewerComponents
+{$ENDIF}
+  ;
 
 type
   TfrmHelpViewer = class(TForm)
     pnlTop:         TPanel;
     btnClose:       TButton;
-    MarkdownViewer: TMarkdownViewer;
     procedure btnCloseClick(Sender: TObject);
+{$IFDEF MARKDOWN_HELP}
+  private
+    FMarkdownViewer: TMarkdownViewer;
+{$ENDIF}
   public
     /// <summary>Loads AHelpFile into the viewer and shows the form modally.</summary>
     procedure ShowHelp(const AHelpFile: string);
@@ -53,12 +65,18 @@ end;
 
 procedure TfrmHelpViewer.ShowHelp(const AHelpFile: string);
 begin
+{$IFDEF MARKDOWN_HELP}
+  FMarkdownViewer := TMarkdownViewer.Create(Self);
+  FMarkdownViewer.Parent := Self;
+  FMarkdownViewer.Align := alClient;
+
   if not FileExists(AHelpFile) then
     raise EFileNotFoundException.CreateFmt(
       'Help file not found: %s', [AHelpFile]);
 
-  MarkDownViewer.LoadFromFile(AHelpFile);
+  FMarkDownViewer.LoadFromFile(AHelpFile);
   ShowModal;
+{$ENDIF}
 end;
 
 class procedure TfrmHelpViewer.ShowHelpTopic(const AHelpFile: string);

@@ -42,20 +42,17 @@ type
       const AProjectName: string;
       const AAuthor:      string;
             AComponents:  IReadOnlyList<ISBOMComponent>;
-      const AOutputFile:  string): Boolean;
+      const AOutputFile:  string;
+            AGenerator:   ISBOMGenerator): Boolean;
   end;
 
   TSBOMGenerationService = class(TInterfacedObject, ISBOMGenerationService)
-  private
-    FContainer: TObject;
   public
-    constructor Create(AContainer: TObject);
-
-    function Generate(
-      const AProjectName: string;
-      const AAuthor:      string;
-            AComponents:  IReadOnlyList<ISBOMComponent>;
-      const AOutputFile:  string): Boolean;
+    function Generate(const AProjectName: string;
+      const AAuthor: string;
+            AComponents: IReadOnlyList<ISBOMComponent>;
+      const AOutputFile: string;
+            AGenerator: ISBOMGenerator): Boolean;
   end;
 
 implementation
@@ -66,39 +63,26 @@ uses
   u_SBOMClasses,
   u_SBOMEnums;
 
-{ TSBOMGenerationService }
-
-constructor TSBOMGenerationService.Create(AContainer: TObject);
-begin
-  inherited Create;
-  FContainer := AContainer;
-end;
-
-function TSBOMGenerationService.Generate(
-  const AProjectName: string;
-  const AAuthor:      string;
-        AComponents:  IReadOnlyList<ISBOMComponent>;
-  const AOutputFile:  string): Boolean;
+function TSBOMGenerationService.Generate(const AProjectName: string;
+    const AAuthor: string;
+          AComponents: IReadOnlyList<ISBOMComponent>;
+    const AOutputFile: string;
+          AGenerator: ISBOMGenerator): Boolean;
 var
-  SBOMGenerator: ISBOMGenerator;
-  Metadata:      ISBOMMetadata;
-  Component:     ISBOMComponent;
-  DepGraph:      ISBOMDependencyGraph;
-  AppBomRef:     string;
+  Metadata:  ISBOMMetadata;
+  Component: ISBOMComponent;
+  DepGraph:  ISBOMDependencyGraph;
+  AppBomRef: string;
 begin
   Result := False;
 
   try
-    SBOMGenerator := TContainer(FContainer).Resolve<ISBOMGenerator>;
-
     Metadata := TSBOMMetadata.Create(AProjectName, '1.0.0', AAuthor);
-    SBOMGenerator.SetMetadata(Metadata);
+    AGenerator.SetMetadata(Metadata);
 
     for Component in AComponents do
-      SBOMGenerator.AddComponent(Component);
+      AGenerator.AddComponent(Component);
 
-    // Build the dependency graph — the application component depends
-    // on every detected external component.
     AppBomRef := Format('pkg:generic/%s@1.0.0',
       [AProjectName.ToLower.Replace(' ', '-')]);
 
@@ -106,13 +90,11 @@ begin
     for Component in AComponents do
       DepGraph.AddDependency(AppBomRef, Component.BomRef);
 
-    SBOMGenerator.SetDependencyGraph(DepGraph);
-    SBOMGenerator.SaveToFile(AOutputFile, ofCycloneDX);
+    AGenerator.SetDependencyGraph(DepGraph);
+    AGenerator.SaveToFile(AOutputFile, ofCycloneDX);
 
     Result := True;
   except
-    // Caller is responsible for display — re-raise so the exception
-    // propagates to btnGenerateSBOMClick for user notification.
     raise;
   end;
 end;
