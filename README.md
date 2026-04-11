@@ -24,8 +24,6 @@ in the Windows registry.
 
 ## Prerequisites
 
-SBOMgen requires the following to be installed before building:
-
 ### Delphi
 
 - **Delphi 12.3 Athens** or **Delphi 13 Florence** — confirmed working
@@ -33,28 +31,43 @@ SBOMgen requires the following to be installed before building:
   tested. Building on versions earlier than XE4 may require minor changes to
   the source. Community feedback on older compiler support is welcome.
 
-### Third-party libraries
+### Libraries
 
-All of the following must be installed and available on the Delphi library path:
+The following libraries are added to the Delphi library search path as source.
+No installer is required — download and add the source folders to your library path
+in Tools → Options → Language → Delphi → Library.
 
 | Library | Version tested | License | Source |
 |---|---|---|---|
 | [Spring4D](https://bitbucket.org/sglienke/spring4d/) | 2.0.1 | Apache 2.0 | Bitbucket |
-| [Konopka Signature VCL Controls (KSVC)](https://getitnow.embarcadero.com/bonus-ksvc/) | 8.0.1 | Proprietary (bundled with RAD Studio) | GetIt |
+| [Fundamentals5](https://github.com/fundamentalslib/fundamentals5) | 5.0 | BSD 2-Clause | GitHub |
+
+### Components
+
+The following components must be installed into the Delphi IDE before building.
+
+| Component | Version tested | License | Source |
+|---|---|---|---|
+| [Konopka Signature VCL Controls (KSVC)](https://getitnow.embarcadero.com/bonus-ksvc/) | 8.0.1 | Proprietary | GetIt |
 | [VirtualTreeView](https://github.com/Virtual-TreeView/Virtual-TreeView) | 8.3 | MPL 1.1 / LGPL | GitHub |
 | [SynEdit](https://getitnow.embarcadero.com/synedit-for-vcl/) | 2025.03 | MPL 1.1 | GetIt |
-| [Fundamentals5](https://github.com/fundamentalslib/fundamentals5) | 5.0 | BSD 2-Clause | GitHub |
-| [SVGIconImageList](https://github.com/EtheaDev/SVGIconImageList) | 2.4.0 | Apache 2.0 | GitHub |
-| [Image32](https://github.com/AngusJohnson/Image32) | 4.4 | BSL-1.0 | Author's site |
-| [Clipper](https://github.com/AngusJohnson/Clipper2) | 2.3.7 | BSL-1.0 | Author's site |
+| [SVGIconImageList](https://github.com/EtheaDev/SVGIconImageList) | 2.4.0 | Apache 2.0 | GetIt / GitHub |
 | [MarkdownHelpViewer](https://github.com/EtheaDev/MarkdownHelpViewer) | 2.4.0 | Apache 2.0 | GitHub |
 
-> **Note:** KSVC is bundled with RAD Studio and is available via GetIt at no
-> additional cost. All other third-party libraries are open source.
+> **Note on MarkdownHelpViewer:** MarkdownHelpViewer bundles Image32, Clipper,
+> and its own copy of SVGIconImageList as source — no separate installation of
+> those is required. However, SVGIconImageList must also be installed separately
+> via GetIt or GitHub before installing MarkdownHelpViewer. This is because
+> MarkdownHelpViewer's design-time packages require the FrameViewer component,
+> which is provided by the SVGIconImageList installation. Install SVGIconImageList
+> first, then MarkdownHelpViewer.
 
-> **Note:** MarkdownHelpViewer bundles the Ethea Markdown Help Viewer, HtmlViewer,
-> Image32, SVGIconImageList, and Clipper components as source. There is no conflict
-> with the separately installed SVGIconImageList, if that was installed via GetIt.
+> **Note on in-application help:** In-application help requires the
+> `MARKDOWN_HELP` conditional define to be added to Project Options →
+> Delphi Compiler → Conditional Defines in all configurations. Without it,
+> SBOMgen builds and runs normally — help is available in the `Manual\` folder
+> as a PDF. See the header comment in `f_Main.pas` and `f_HelpViewer.pas` for
+> details.
 
 ### Runtime
 
