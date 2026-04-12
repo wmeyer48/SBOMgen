@@ -1221,7 +1221,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
-        <PreBuildEvent>copy /b &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot; +,, &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot;</PreBuildEvent>
+        <PreBuildEvent>copy /b &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot; +,, &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot;</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
@@ -1229,7 +1229,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
-        <PreBuildEvent>copy /b &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot; +,, &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot;</PreBuildEvent>
+        <PreBuildEvent>copy /b &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot; +,, &quot;$(PROJECTDIR)\package-metadata-defaults.rc&quot;</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
         <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>

@@ -53,7 +53,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Wedgewood Light');
   Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.
