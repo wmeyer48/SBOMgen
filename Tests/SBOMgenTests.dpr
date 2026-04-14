@@ -4,7 +4,6 @@ uses
   TestInsight.DUnitX,
   DUnitX.TestFramework,
   u_Logger in '..\u_Logger.pas',
-  u_TextTools in '..\..\SharedUtils\StrUtils\u_TextTools.pas',
   u_EnumUtils in '..\u_EnumUtils.pas',
   SBOMgen.Tests.TextTools in 'SBOMgen.Tests.TextTools.pas',
   SBOMgen.Tests.SBOMClasses in 'SBOMgen.Tests.SBOMClasses.pas',
@@ -23,7 +22,8 @@ uses
   u_MetadataEditController in '..\u_MetadataEditController.pas',
   SBOMgen.Tests.MapModules in 'SBOMgen.Tests.MapModules.pas',
   u_MapModules in '..\u_MapModules.pas',
-  u_SBOMEnums in '..\u_SBOMEnums.pas';
+  u_SBOMEnums in '..\u_SBOMEnums.pas',
+  u_TextTools in '..\u_TextTools.pas';
 
 {$R *.res}
 {$R 'package-metadata-defaults.res'}

@@ -67,7 +67,6 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\u_Logger.pas"/>
-        <DCCReference Include="..\..\SharedUtils\StrUtils\u_TextTools.pas"/>
         <DCCReference Include="..\u_EnumUtils.pas"/>
         <DCCReference Include="SBOMgen.Tests.TextTools.pas"/>
         <DCCReference Include="SBOMgen.Tests.SBOMClasses.pas"/>
@@ -87,6 +86,7 @@
         <DCCReference Include="SBOMgen.Tests.MapModules.pas"/>
         <DCCReference Include="..\u_MapModules.pas"/>
         <DCCReference Include="..\u_SBOMEnums.pas"/>
+        <DCCReference Include="..\u_TextTools.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
