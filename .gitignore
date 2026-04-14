@@ -38,6 +38,8 @@
 #iOSDevice64/
 #Linux64/
 
+# Override: fixture MAP file is test infrastructure, not a build artifact
+!Tests/Fixtures/SBOMgen.map
 # Delphi compiler-generated binaries (safe to delete)
 *.exe
 *.dll
