@@ -1,6 +1,6 @@
 
  Start                 Length     Name                   Class
- 0001:0000000140001000 00B84A28H .text                   CODE
+ 0001:0000000140001000 00B849E8H .text                   CODE
  0002:0000000140B86000 000FFF30H .data                   DATA
  0003:0000000140C86000 0004D114H .bss                    BSS
  0004:0000000140000000 00000420H .tls                    TLS
@@ -376,7 +376,7 @@ Detailed map of segments
  0001:00B5A350 0000C2D0 C=CODE     S=.text    G=(none)   M=f_Main   ALIGN=4
  0001:00B66620 00000030 C=CODE     S=.text    G=(none)   M=u_EnumUtils ALIGN=4
  0001:00B66650 00000030 C=CODE     S=.text    G=(none)   M=u_TextTools ALIGN=4
- 0001:00B66680 0001E3A8 C=CODE     S=.text    G=(none)   M=SBOMgen  ALIGN=4
+ 0001:00B66680 0001E368 C=CODE     S=.text    G=(none)   M=SBOMgen  ALIGN=4
  0002:00000000 0000455C C=DATA     S=.data    G=DGROUP   M=System   ALIGN=4
  0002:0000455C 0000013C C=DATA     S=.data    G=DGROUP   M=SysInit  ALIGN=4
  0002:00004698 00000580 C=DATA     S=.data    G=DGROUP   M=System.Types ALIGN=4
