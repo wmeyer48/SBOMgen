@@ -114,6 +114,15 @@ SBOMgen/
 └── SBOM Test/         Sample MAP file and generated SBOM examples
 ```
 
+## Binary Downloads
+
+For those who don't wish to build SBOMgen themselves, downloadables are available from 
+[Intentional Delphi](https://wmeyer.tech/). There are zip files for Win32 and Win64 systems.
+Each contains the executable, the manual as a PDF, and the help and SPDX files needed for 
+operation. Simply unzip into a folder on your machine. Note that the teo subfolders and
+their contents are necessary, and the subfolder names are embedded in the code, so do 
+not alter them.
+
 ## Related Tools
 
 [DX.Comply](https://github.com/omonien/DX.Comply) by Olaf Monien is a
